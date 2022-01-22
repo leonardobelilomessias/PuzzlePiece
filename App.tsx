@@ -1,20 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { StyleSheet, Text, View,StatusBar } from 'react-native';
+import { Home } from './src/Pages/Home';
+import {Login} from './src/Pages/Login'
+import { useFonts } from 'expo-font';
+import {Amaranth_400Regular,Amaranth_700Bold} from '@expo-google-fonts/amaranth'
+import { Inter_900Black } from '@expo-google-fonts/inter';
+import AppLoading from 'expo-app-loading'
+
+
 
 export default function App() {
+  const [fontsLoad] = useFonts({
+    Amaranth_400Regular,
+    Amaranth_700Bold,
+    Inter_900Black
+  })
+  if(!fontsLoad){
+    return(
+      <AppLoading/>
+    )
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View >
+      <Home></Home>
+ {/*     <Login></Login> */}
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const style = StyleSheet.create({
+  font:{
+    fontFamily:'Amaranth_400Regular',
+    fontSize:30
+  }
+})
