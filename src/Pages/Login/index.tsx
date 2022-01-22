@@ -1,8 +1,15 @@
 import { View,Text,Image,StyleSheet,StatusBar, SafeAreaView, TextInput, TouchableOpacity } from "react-native";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import First from '../../assets/img/puzzle.png'
-
+import { useNavigation } from "@react-navigation/native";
+import { ReactElement, ReactNode } from "react";
 export function Login(){
+  const navigation = useNavigation<any>()
+
+  function handleLogin(){
+    navigation.navigate('Home')
+  }
+
   return(
   <SafeAreaView>
     <View style={style.container}>
@@ -12,9 +19,9 @@ export function Login(){
       <Text style={ style.title}>Planeje, organize, crie e explore todo seu potencial.</Text>
       <TextInput style={style.input} onChange={()=>{}} placeholder="Email"/>
       <TextInput style={style.input} onChange={()=>{}} placeholder="Senha"/>
-      <TouchableOpacity style={style.button} activeOpacity={0.7}>
+      <TouchableOpacity  style={style.button} activeOpacity={0.7} onPress={handleLogin} >
         <Text style={style.textButton}>Entrar</Text>
-      </TouchableOpacity>
+      </TouchableOpacity >
       <Text>Ainda não tem um conta? Cadastre-se </Text>
     </View>
   </SafeAreaView>

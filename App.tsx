@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font';
 import {Amaranth_400Regular,Amaranth_700Bold} from '@expo-google-fonts/amaranth'
 import { Inter_900Black } from '@expo-google-fonts/inter';
 import AppLoading from 'expo-app-loading'
+import { Routes } from './src/routes/auth.routes';
 
 
 
@@ -21,10 +22,9 @@ export default function App() {
     )
   }
   return (
-    <View >
-      <Home></Home>
- {/*     <Login></Login> */}
-    </View>
+
+      <Routes/> 
+    
   );
 }
 

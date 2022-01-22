@@ -1,6 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, ScrollView, StyleSheet,Text, TouchableOpacity, View ,Image} from "react-native";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import {AiOutlineMenu} from 'react-icons/ai'
+import { SimpleLineIcons } from '@expo/vector-icons';
+
 export function Home(){
   const url = 'https://github.com/leonardobmessias.png'
   return(
@@ -11,7 +14,7 @@ export function Home(){
     <View style={style.home}>
       <Image source={{uri:url}} style={style.avatar}></Image>
       <Text style={style.name}> Leonardo Belilo</Text>
-      <View style={style.icon}></View>
+      <TouchableOpacity style={style.icon}><SimpleLineIcons name="menu" size={24} color="black" /></TouchableOpacity>
     </View>
     
     <View  style={style.box}>
@@ -75,7 +78,7 @@ const style = StyleSheet.create({
     alignItems:"center",
     justifyContent:"space-between",
     padding: 5,
-    borderBottomWidth:1
+    borderBottomWidth:0.5
   },
   avatar:{
     width: 50,
@@ -93,9 +96,10 @@ const style = StyleSheet.create({
   icon:{
     width: 50,
     height: 50,
-    backgroundColor:'#99999F',
     marginLeft:20,
     marginRight:20,
+    alignItems:"center",
+    justifyContent:"center"
 
   },
   tilte:{
@@ -111,7 +115,7 @@ const style = StyleSheet.create({
   item:{
     width: 150,
     height: 150,
-    backgroundColor:'#99999F',
+    backgroundColor:'#028bfc7a',
     margin:10,
   },
   tasks:{
