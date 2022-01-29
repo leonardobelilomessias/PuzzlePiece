@@ -32,5 +32,5 @@ export const dataGoals = [{
   task:2,
   situation:"done",
   img:"https://github.com/leonardobmessias.png"
-}
+},
 ]

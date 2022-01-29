@@ -15,7 +15,8 @@ export function Login(){
     <View style={style.container}>
     <StatusBar  barStyle="dark-content" backgroundColor="transparent"/>
       <Text style={style.logoTitle}>Puzzle Piece</Text>
-      <Image source={First}/>
+
+      <Image  source={First}/>
       <Text style={ style.title}>Planeje, organize, crie e explore todo seu potencial.</Text>
       <TextInput style={style.input} onChange={()=>{}} placeholder="Email"/>
       <TextInput style={style.input} onChange={()=>{}} placeholder="Senha"/>
@@ -72,5 +73,6 @@ const style = StyleSheet.create({
     color: 'white',
     fontSize:20,
     fontWeight:"bold",
-  }
+  },
+
 })

@@ -33,9 +33,10 @@ export function List(){
 
 const style = StyleSheet.create({
   tasks:{
-    backgroundColor:'#99999F',
+    color:"#4296f5",
     margin: 10,
     padding: 8,
+    marginHorizontal:20,
   },
   title:{
     fontSize:18,

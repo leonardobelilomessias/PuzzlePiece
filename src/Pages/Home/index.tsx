@@ -5,7 +5,6 @@ import { Header } from "../../Components/Header";
 import { Area } from "../../Components/Area";
 import { List } from "../../Components/List";
 export function Home(){
-
   return(
   <>
     <SafeAreaView>
@@ -13,7 +12,7 @@ export function Home(){
       <ScrollView alwaysBounceVertical>
           <Header></Header>
           <Goals ></Goals>
-          <Area></Area>
+{/*           <Area></Area> */}
           <List></List>
       </ScrollView>
     </SafeAreaView>

@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { Home } from '../Pages/Home'
 import { Login } from '../Pages/Login'
 import { View,Text } from 'react-native'
+import { CreateGoal } from '../Pages/CreateGoal';
 
 const {Navigator, Screen}= createNativeStackNavigator()
 
@@ -15,6 +16,9 @@ export function Routes(){
             headerShown: false,
           }} name="Login" component={Login}/>
           <Screen name="Home" component={Home} options={{
+            headerShown: false,
+          }}/>
+          <Screen name="CreateGoal" component={CreateGoal}options={{
             headerShown: false,
           }}/>
         </Navigator>
