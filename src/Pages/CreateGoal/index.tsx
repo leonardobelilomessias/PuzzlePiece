@@ -1,8 +1,10 @@
+import { useNavigationState } from "@react-navigation/native"
 import { useState } from "react"
 import { SafeAreaView,ScrollView,StatusBar, View,Text, TextInput, StyleSheet ,TouchableOpacity,Image,KeyboardAvoidingView} from "react-native"
 import ImgcreateGoal from '../../assets/img/ImgCreateGoal.png'
 import { Input } from "../../Components/Input"
 import { Goal } from "../../controller/Goal.controller"
+import {useNavigation} from '@react-navigation/native'
 
 type GoalProps={
   name:string
@@ -16,6 +18,8 @@ type GoalProps={
 }
 
 export function CreateGoal(){
+  const navigation = useNavigation<any>()
+
   const [nameGoal,setNameGoal]=useState('')
   const [resp,useResp] = useState(false)
   function handleRespYes(){
@@ -26,8 +30,8 @@ export function CreateGoal(){
   }
   const itens:GoalProps = {name:'test',date:'',createAt:'',task:[''],amountTask:0,process:[''],amountProcess:0,img:''}
   const newGoal = new Goal(itens)
-  function show(){
-    console.log(nameGoal)
+  function NextShowGoal(){
+    navigation.navigate('ShowGoal',{name:'leonardo'})
 
   }
   return(
@@ -42,7 +46,7 @@ export function CreateGoal(){
 
           <Image style={style.imageGoal} source={ImgcreateGoal} />
           <Text>Essa é a hora de você pensar em como você pode estruturar o seu objetivo.
-          Vamos fazer da seguinte forma. Vamos criar um objetivo claro e bem definido. Depois vamos para as proximas etapas aonde vamos definir os processos e as Tarefaz. Então seus objetivos vão ficar da seguinte forma: Objetivo > processos > Tarefas.
+          Vamos fazer da seguinte forma. Vamos criar um objetivo claro e bem definido. Depois vamos para as proximas etapas aonde vamos definir os processos e as Tarefaz. Então seus objetivos vão ficar da seguinte forma: Objetivo {'>'} processos {'>'} Tarefas.
           um exemplo: objetivo perder 15 kilo. Meus processos comer de 3 em 3 horas
           </Text>
           <Text style={style.subtitle}>Nome</Text>
@@ -73,8 +77,8 @@ export function CreateGoal(){
             <Input></Input>
           </View>
         </View>
-            <TouchableOpacity onPress={show} style={style.button}>
-              <Text style={style.textButton}> Criar </Text>
+            <TouchableOpacity onPress={NextShowGoal} style={style.button}>
+              <Text style={style.textButton}> Proximo </Text>
             </TouchableOpacity>
 
       </ScrollView>
